@@ -1,45 +1,45 @@
 // components/dropdown.tsx
-'use client'
+"use client";
 
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
-import { Box, Menu, MenuItem, Typography } from '@mui/material'
-import Link from 'next/link'
-import { useState, ComponentType } from 'react'
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Box, Menu, MenuItem, Typography } from "@mui/material";
+import Link from "next/link";
+import { useState, ComponentType } from "react";
 
 interface SubItem {
-  name: string
-  href: string
+  name: string;
+  href: string;
 }
 
 interface DropdownCategory {
-  category: string
-  items: SubItem[]
+  category: string;
+  items: SubItem[];
 }
 
 interface DropdownMenuProps {
-  label: string
-  items: DropdownCategory[]
+  label: string;
+  items: DropdownCategory[];
 }
 
 interface TriggerProps {
-  onClick: (event: React.MouseEvent<HTMLElement>) => void
-  children: React.ReactNode
-  sx: object
+  onClick: (event: React.MouseEvent<HTMLElement>) => void;
+  children: React.ReactNode;
+  sx: object;
 }
 
 const DropdownMenu = ({ label, items }: DropdownMenuProps) => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const open = Boolean(anchorEl)
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
+    setAnchorEl(event.currentTarget);
+  };
 
   const handleClose = () => {
-    setAnchorEl(null)
-  }
+    setAnchorEl(null);
+  };
 
-  const TriggerComponent = Box as ComponentType<TriggerProps>
+  const TriggerComponent = Box as ComponentType<TriggerProps>;
 
   return (
     <>
@@ -47,19 +47,19 @@ const DropdownMenu = ({ label, items }: DropdownMenuProps) => {
       <TriggerComponent
         onClick={handleClick}
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-          textDecoration: 'none',
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+          textDecoration: "none",
         }}
       >
         <Typography
-          variant='body1'
+          variant="body1"
           sx={{
-            fontWeight: 'bold',
-            color: 'black',
-            '&:hover': {
-              color: 'grey.700',
+            fontWeight: "bold",
+            color: "black",
+            "&:hover": {
+              color: "grey.700",
             },
           }}
         >
@@ -67,11 +67,11 @@ const DropdownMenu = ({ label, items }: DropdownMenuProps) => {
         </Typography>
         <KeyboardArrowDownIcon
           sx={{
-            color: 'black',
+            color: "black",
             ml: 0.5,
-            fontSize: '1rem',
-            transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
-            transition: 'transform 0.3s ease-in-out',
+            fontSize: "1rem",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease-in-out",
           }}
         />
       </TriggerComponent>
@@ -84,39 +84,39 @@ const DropdownMenu = ({ label, items }: DropdownMenuProps) => {
         slotProps={{
           paper: {
             sx: {
-              width: '100vw',
-              maxWidth: 'none',
-              height: '60vh',
-              padding: '30px 120px 0 120px',
-              backgroundColor: 'white',
-              boxShadow: 'none',
+              width: "100vw",
+              maxWidth: "none",
+              height: "60vh",
+              padding: "30px 120px 0 120px",
+              backgroundColor: "white",
+              boxShadow: "none",
               borderRadius: 0,
-              overflowY: 'auto',
-              boxSizing: 'border-box',
-              borderTop: '0.5px solid #ccc',
-              mt: '10px',
+              overflowY: "auto",
+              boxSizing: "border-box",
+              borderTop: "0.5px solid #ccc",
+              mt: "2px",
               left: 0,
             },
           },
         }}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: "bottom",
+          horizontal: "left",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: "top",
+          horizontal: "left",
         }}
         disableAutoFocusItem
         disablePortal={false}
       >
-        <div className='flex gap-20'>
+        <div className="flex gap-20">
           {items.length > 0 ? (
             items.map((group, index) => (
               <Box key={index}>
                 <Typography
-                  variant='subtitle1'
-                  sx={{ fontWeight: 'bold', color: 'black', mb: 1 }}
+                  variant="subtitle1"
+                  sx={{ fontWeight: "bold", color: "black", mb: 1 }}
                 >
                   {group.category}
                 </Typography>
@@ -127,48 +127,48 @@ const DropdownMenu = ({ label, items }: DropdownMenuProps) => {
                     component={Link}
                     href={item.href} // Use the href from the SubItem
                     sx={{
-                      fontWeight: 'bold',
-                      color: 'black',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      padding: '8px 16px',
-                      textDecoration: 'none',
-                      '&:hover': { backgroundColor: '#f5f5f5' },
+                      fontWeight: "bold",
+                      color: "black",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      padding: "8px 16px",
+                      textDecoration: "none",
+                      "&:hover": { backgroundColor: "#f5f5f5" },
                     }}
                   >
                     <Typography
-                      variant='body2'
+                      variant="body2"
                       sx={{
-                        fontWeight: 'bold',
+                        fontWeight: "bold",
                       }}
                     >
                       {item.name}
                     </Typography>
-                    {item.name === 'Baby Crop' && (
+                    {item.name === "Baby Crop" && (
                       <Typography
-                        variant='caption'
+                        variant="caption"
                         sx={{
-                          color: 'white',
-                          fontSize: '0.75rem',
+                          color: "white",
+                          fontSize: "0.75rem",
                           ml: 5,
-                          backgroundColor: 'pink',
+                          backgroundColor: "pink",
                           borderRadius: 1,
-                          padding: '4px 10px',
+                          padding: "4px 10px",
                         }}
                       >
                         NEW
                       </Typography>
                     )}
-                    {item.name === 'Tracksuit' && (
+                    {item.name === "Tracksuit" && (
                       <Typography
-                        variant='caption'
+                        variant="caption"
                         sx={{
-                          color: 'white',
-                          fontSize: '0.75rem',
+                          color: "white",
+                          fontSize: "0.75rem",
                           ml: 5,
-                          backgroundColor: 'pink',
+                          backgroundColor: "pink",
                           borderRadius: 1,
-                          padding: '4px 10px',
+                          padding: "4px 10px",
                         }}
                       >
                         RESTOCKED
@@ -180,7 +180,7 @@ const DropdownMenu = ({ label, items }: DropdownMenuProps) => {
             ))
           ) : (
             <MenuItem onClick={handleClose}>
-              <Typography variant='body2' sx={{ color: 'black' }}>
+              <Typography variant="body2" sx={{ color: "black" }}>
                 Coming Soon
               </Typography>
             </MenuItem>
@@ -188,7 +188,7 @@ const DropdownMenu = ({ label, items }: DropdownMenuProps) => {
         </div>
       </Menu>
     </>
-  )
-}
+  );
+};
 
-export default DropdownMenu
+export default DropdownMenu;
