@@ -243,7 +243,7 @@ a.highlight-link {
 
 .animate-scroll {
   display: inline-flex;
-  animation: scroll 20s linear infinite;
+  animation: scroll 50s linear infinite;
 }
 
 @media (max-width: 576px) {

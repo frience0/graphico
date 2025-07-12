@@ -5,14 +5,23 @@ import { useState, useEffect } from "react";
 const TopBar = () => {
   const messages = [
     "WORLDWIDE SHIPPING!",
+    "•",
     "UP TO 25% OFF EVERYTHING ⚡",
+    "•",
     "LIMITED TIME ONLY",
+    "•",
     "WORLDWIDE SHIPPING!",
+    "•",
     "UP TO 25% OFF EVERYTHING ⚡",
+    "•",
     "LIMITED TIME ONLY",
+    "•",
     "WORLDWIDE SHIPPING!",
+    "•",
     "UP TO 25% OFF EVERYTHING ⚡",
+    "•",
     "LIMITED TIME ONLY",
+    "•",
   ];
 
   const [isVisible, setIsVisible] = useState(true);
@@ -51,11 +60,6 @@ const TopBar = () => {
               }`}
             >
               {message}
-              {index < messages.length * 2 - 1 && (
-                <span className="inline-block mx-1 sm:mx-2 md:mx-3 text-gray-500">
-                  •
-                </span>
-              )}
             </span>
           ))}
         </div>
