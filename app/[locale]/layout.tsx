@@ -23,7 +23,7 @@ export async function generateMetadata() {
   return {
     title: {
       template: `%s | ${name}`,
-      default: `${name}. ${slogan}`,
+      default: `${name} ${slogan}`,
     },
     description: description,
     metadataBase: new URL(url),
