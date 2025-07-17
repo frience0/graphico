@@ -278,6 +278,15 @@ a.highlight-link {
   }
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(4, 2fr);
