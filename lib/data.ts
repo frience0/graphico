@@ -6,8 +6,8 @@ import { i18n } from "@/i18n-config";
 const users: IUserInput[] = [
   {
     name: "John",
-    email: "admin@example.com",
-    password: bcrypt.hashSync("123456", 5),
+    email: "admin@graphico.com",
+    password: bcrypt.hashSync("qwerty123", 5),
     role: "Admin",
     address: {
       fullName: "John Doe",
@@ -930,118 +930,29 @@ We also offer valuable resources, including order tracking, product guides, and 
 
   headerMenus: [
     {
-      name: "Accessories",
-      subItems: [
-        {
-          category: "SHIRTS",
-          items: [
-            // href: '/search?tag=featured',
-            {
-              name: "Classic Tees",
-              href: "/search?tag=todays-deal",
-            },
-            {
-              name: "Oversized Tees",
-              href: "/search?tag=new-arrival",
-            },
-            {
-              name: "Wash Tees",
-              href: "/search?tag=best-seller",
-            },
-            {
-              name: "Kids Tees",
-              href: "/search?tag=featured",
-            },
-            {
-              name: "Baby Crop",
-              href: "/#browsing-history",
-            },
-            { name: "Tanks", href: "/page/customer-service" },
-            {
-              name: "Crop Tees",
-              href: "/search?tag=new-arrival",
-            },
-            {
-              name: "Long Sleeves",
-              href: "/search?tag=new-arrival",
-            },
-          ],
-        },
-        {
-          category: "SWEATS",
-          items: [
-            // href: '/search?tag=featured',
-            { name: "Hoodies", href: "/search?tag=new-arrival" },
-            {
-              name: "Sweatshirts",
-              href: "/search?tag=new-arrival",
-            },
-            {
-              name: "Tracksuit",
-              href: "/search?tag=new-arrival",
-            },
-          ],
-        },
-      ],
-    },
-    {
       name: "New Arrivals",
       subItems: [
         {
-          category: "HEADWEAR",
+          category: "TSHIRTS",
           items: [
-            // href: '/search?tag=new-arrival',
-            { name: "Caps", href: "/search?tag=new-arrival" },
-            {
-              name: "Beanies",
-              href: "/search?tag=new-arrival",
-            },
-            { name: "Visors", href: "/search?tag=new-arrival" },
-          ],
-        },
-        {
-          category: "BAGS",
-          // href: '/search?tag=new-arrival',
-          items: [
-            {
-              name: "Backpacks",
-              href: "/search?tag=new-arrival",
-            },
-            {
-              name: "Tote Bags",
-              href: "/search?tag=new-arrival",
-            },
-            {
-              name: "Crossbody Bags",
-              href: "/search?tag=new-arrival",
-            },
-          ],
-        },
-        {
-          category: "JEWELRY",
-          items: [
-            // href: '/search?tag=new-arrival',
-            {
-              name: "Necklaces",
-              href: "/search?tag=new-arrival",
-            },
-            {
-              name: "Bracelets",
-              href: "/search?tag=new-arrival",
-            },
-            { name: "Rings", href: "/search?tag=new-arrival" },
+            { name: "Classic Tshirts", href: "/search?tag=new-arrival" },
+            { name: "Oversized Tshirts", href: "/search?tag=new-arrival" },
+            { name: "Wash Tshirts", href: "/search?tag=new-arrival" },
+            { name: "Kids Tshirts", href: "/search?tag=new-arrival" },
+            { name: "Baby Crop", href: "/search?tag=new-arrival" },
+            { name: "Tanks", href: "/search?tag=new-arrival" },
+            { name: "Crop Tshirts", href: "/search?tag=new-arrival" },
+            { name: "Long Sleeves", href: "/search?tag=new-arrival" },
           ],
         },
       ],
     },
-
     {
       name: "Best Sellers",
       subItems: [
         {
           category: "BRANDS",
           items: [
-            // href: '/search?tag=themes',
             { name: "Adidas", href: "/search?tag=featured" },
             { name: "Nike", href: "/search?tag=featured" },
             { name: "Hanes", href: "/search?tag=featured" },
@@ -1050,10 +961,35 @@ We also offer valuable resources, including order tracking, product guides, and 
         {
           category: "STYLES",
           items: [
-            // href: '/search?tag=themes',
-            { name: "Graphic Tee", href: "/search?tag=featured" },
+            { name: "Graphic Tshirt", href: "/search?tag=featured" },
             { name: "Oversized", href: "/search?tag=featured" },
             { name: "Athletic", href: "/search?tag=featured" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "Accessories",
+      subItems: [
+        {
+          category: "TSHIRTS",
+          items: [
+            { name: "Classic Tshirts", href: "/search?tag=todays-deal" },
+            { name: "Oversized Tshirts", href: "/search?tag=new-arrival" },
+            { name: "Wash Tshirts", href: "/search?tag=best-seller" },
+            { name: "Kids Tshirts", href: "/search?tag=featured" },
+            { name: "Baby Crop", href: "/#browsing-history" },
+            { name: "Tanks", href: "/page/customer-service" },
+            { name: "Crop Tshirts", href: "/search?tag=new-arrival" },
+            { name: "Long Sleeves", href: "/search?tag=new-arrival" },
+          ],
+        },
+        {
+          category: "SWEATS",
+          items: [
+            { name: "Hoodies", href: "/search?tag=new-arrival" },
+            { name: "Sweatshirts", href: "/search?tag=new-arrival" },
+            { name: "Tracksuit", href: "/search?tag=new-arrival" },
           ],
         },
       ],
@@ -1064,7 +1000,6 @@ We also offer valuable resources, including order tracking, product guides, and 
         {
           category: "STYLES",
           items: [
-            // href: '/search?tag=custom',
             { name: "Minimalist", href: "/search?tag=featured" },
             { name: "Vintage", href: "/search?tag=featured" },
             { name: "Modern", href: "/search?tag=featured" },
@@ -1073,7 +1008,6 @@ We also offer valuable resources, including order tracking, product guides, and 
         {
           category: "SEASONS",
           items: [
-            // href: '/search?tag=custom',
             { name: "Spring", href: "/search?tag=featured" },
             { name: "Summer", href: "/search?tag=featured" },
             { name: "Fall", href: "/search?tag=featured" },
@@ -1121,7 +1055,7 @@ We also offer valuable resources, including order tracking, product guides, and 
         description:
           "Graphico is a premier ecommerce platform built with Next.js, Tailwind CSS, and MongoDB, offering quality products and exceptional service.",
         keywords: "Graphico Ecommerce, Next.js, Tailwind CSS, MongoDB",
-        url: "http://localhost:3000",
+        url: "https://juan-graphico.com",
         logo: "/icons/grap.png",
         slogan: "| Shop smart, live better.",
         author: "Graphico Team",

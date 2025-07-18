@@ -30,7 +30,7 @@ export default function AddToCart({
 
   return minimal ? (
     <Button
-      className="rounded-md w-auto uppercase hover:bg-black"
+      className="rounded-full w-auto uppercase hover:bg-black"
       onClick={() => {
         try {
           addItem(item, 1);
